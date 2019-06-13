@@ -18,7 +18,7 @@ NB=20                             #número de cópias do banco de dados
 HS="backup"                      #nome do arquivo compactado
 function backup()
 {
- echo "Realizando backup do server01 MariaDB on line para FTP da Locaweb"
+ echo "Realizando backup do server01 MariaDB on line para FTP"
  mysqldump -u$LOGIN -p$PW -h$SERVER --add-drop-table --quote-names --all-databases --add-drop-database > "$HOME/$HS-$NW-$HR.sql"
  echo "Compactando arquivo de backup $HS-$NW-$HR.sql.gz ..."
  gzip -f "$HOME/"$HS-$NW-$HR.sql
